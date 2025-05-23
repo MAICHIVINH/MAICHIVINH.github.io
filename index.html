@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mai Chí Vĩnh - Hồ sơ cá nhân</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #eefaf9;
+      color: #333;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      text-align: center;
+    }
+
+    .avatar {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #fff;
+      box-shadow: 0 0 0 4px #009688;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 10px 0 5px;
+      color: #009688;
+    }
+
+    .job {
+      font-size: 1.2em;
+      color: #666;
+    }
+
+    .school {
+      font-size: 1.1em;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    .bio {
+      font-size: 1.05em;
+      margin-top: 8px;
+      color: #444;
+    }
+
+    .contact-info {
+      margin-top: 15px;
+      font-size: 1em;
+      color: #555;
+    }
+
+    .contact-info i {
+      margin-right: 8px;
+      color: #009688;
+    }
+
+    .cv a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #009688;
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .cv a:hover {
+      background: #00796b;
+    }
+
+    .social {
+      margin-top: 15px;
+    }
+
+    .social a {
+      margin: 0 8px;
+      font-size: 1.4em;
+      color: #009688;
+      transition: 0.3s;
+    }
+
+    .social a:hover {
+      color: #00796b;
+    }
+
+    .grid-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 10px;
+    }
+
+    .skills,
+    .certificates {
+      flex: 1 1 45%;
+    }
+
+    .skills h2,
+    .certificates h2 {
+      color: #009688;
+      margin-bottom: 10px;
+    }
+
+    .skills ul,
+    .certificates ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .skills li,
+    .certificates li {
+      margin: 8px 0;
+      padding-left: 1em;
+      position: relative;
+    }
+
+    .skills li::before,
+    .certificates li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #00796b;
+    }
+
+    .projects {
+      margin-top: 50px;
+    }
+
+    .projects h2 {
+      text-align: center;
+      color: #009688;
+      font-size: 1.5em;
+    }
+
+    .project-list {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .project-card {
+      background: #e1e1e1;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 270px;
+      padding-top: 10px;
+    }
+
+    .project-card h3 {
+      margin: 10px;
+      font-size: 20px;
+    }
+
+    .project-card p {
+      margin: 0 10px 10px;
+      text-align: justify;
+      font-weight: medium;
+    }
+
+    .project-card a {
+      margin-top: auto;
+      display: block;
+      margin: 0 10px 15px;
+      text-decoration: none;
+      color: #009688;
+
+    }
+
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px 10px;
+      background-color: #009688;
+      color: white;
+      text-align: center;
+      border-radius: 0 0 20px 20px;
+      font-size: 0.9em;
+    }
+
+    footer a {
+      color: #e0f2f1;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    footer a:hover {
+      color: #b2dfdb;
+      text-decoration: underline;
+    }
+
+    .footer-social a {
+      font-size: 1.2em;
+      margin: 0 10px;
+      vertical-align: middle;
+    }
+
+    .footer-slogan {
+      margin-top: 10px;
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px 10px;
+        padding: 20px 15px;
+        border-radius: 15px;
+      }
+
+      .header {
+        padding: 10px 0;
+      }
+
+      .avatar {
+        width: 100px;
+        height: 100px;
+        border-width: 3px;
+        box-shadow: 0 0 0 3px #009688;
+      }
+
+      h1 {
+        font-size: 1.6em;
+      }
+
+      .job,
+      .bio,
+      .contact-info p {
+        font-size: 0.9em;
+      }
+
+      .contact-info p {
+        margin: 6px 0;
+      }
+
+      .cv a {
+        padding: 8px 16px;
+        font-size: 0.9em;
+      }
+
+      .social a {
+        font-size: 1.2em;
+        margin: 0 6px;
+      }
+
+      .grid-section {
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .skills,
+      .certificates {
+        flex: 1 1 100%;
+      }
+
+      .projects h2 {
+        font-size: 1.3em;
+      }
+
+      .project-list {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        height: auto;
+      }
+
+      footer {
+        font-size: 0.8em;
+        padding: 10px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <img class="avatar" src="avatar.jpg" alt="Mai Chí Vĩnh">
+      <h1>Mai Chí Vĩnh</h1>
+      <p class="job">Sinh viên CNTT</p>
+      <p class="school">Khoa Công nghệ & Kỹ thuật – Trường Đại học Đồng Tháp</p>
+      <p class="bio">
+        Với tâm huyết và niềm đam mê công nghệ, tôi không ngừng khám phá và sáng tạo để xây dựng những sản phẩm phần mềm
+        tuyệt vời, góp phần thay đổi thế giới số theo cách của riêng mình.
+      </p>
+
+      <!-- <div class="contact-info">
+        <p><i class="fas fa-map-marker-alt"></i> 783 Phạm Hữu Lầu, TP. Cao Lãnh, Đồng Tháp</p>
+        <p><i class="fas fa-phone"></i> 0123 456 789</p>
+        <p><i class="fas fa-envelope"></i> example@gmail.com</p>
+      </div> -->
+      <div class="cv">
+        <a href="#" target="_blank"><i class="fas fa-download"></i> Tải CV của tôi</a>
+      </div>
+      <div class="social">
+        <a href="https://www.facebook.com/Vinhdev04" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://youtube.com/@TenKenhCuaBan" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
+
+      </div>
+    </header>
+
+    <section class="grid-section">
+      <div class="skills">
+        <h2>🛠️ Kỹ năng chuyên môn</h2>
+        <ul>
+          <li>Ngôn ngữ: C++, C#, Java, PHP, JavaScript, Dart</li>
+          <li>Front-end: HTML, CSS, React</li>
+          <li>Back-end: Spring Boot, ASP.NET 8</li>
+          <li>CSDL: SQL Server, MySQL, PostgreSQL</li>
+          <li>Git, GitHub, Sourcetree, Navicat</li>
+        </ul>
+      </div>
+
+      <div class="certificates">
+        <h2>📜 Chứng chỉ</h2>
+        <ul>
+          <li>Chứng chỉ Tin học văn phòng – Trường Đại học Đồng Tháp</li>
+          <li>Chứng chỉ Tiếng anh B1 – Trường Đại học Đồng Tháp</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="projects">
+      <h2>Dự án cá nhân</h2>
+      <div class="project-list">
+        <div class="project-card">
+          <h3>🛒 Website bán laptop</h3>
+          <p><strong>Công nghệ sử dụng:</strong> React, Spring Boot, PostgreSQL</p>
+          <p><strong>Chức năng:</strong> Đăng ký, đăng nhập, gửi mã xác nhận đặt lại mật khẩu về gmail, mã hóa mật khẩu
+            BCrypt, đặt hàng, quản lý
+            sản phẩm, thống kê doanh thu.</p>
+          <a href="https://github.com/tenban/laptop-shop" target="_blank">🔗 Xem trên GitHub</a>
+        </div>
+
+        <div class="project-card">
+          <h3>🛒 Quản lý cửa hàng laptop</h3>
+          <p><strong>Công nghệ sử dụng:</strong> HTML5, SQL Server, ASP.NET WebForms</p>
+          <p><strong>Chức năng:</strong> Đăng ký, đăng nhập, mã hóa mật khẩu SHA-256, tìm kiếm, đặt hàng, quản lý sản
+            phẩm, danh mục, thương hiệu, phân quyền người dùng, xuất file excel.</p>
+          <a href="https://github.com/MAICHIVINH/QuanLyCuaHangLapTop.git" target="_blank">🔗 Xem trên GitHub</a>
+        </div>
+        <div class="project-card">
+          <h3>📝 Quản lý lớp học phần</h3>
+          <p><strong>Công nghệ sử dụng:</strong> C++</p>
+          <p><strong>Chức năng:</strong> App quản lý lớp học, giảng viên, môn học, tìm kiếm, thống kê, nhập/xuất dữ liệu
+            .txt.</p>
+          <a href="https://github.com/MAICHIVINH/QuanLyLopHocPhan.git" target="_blank">🔗 Xem trên GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="projects">
+      <h2>Dự án nhóm</h2>
+      <div class="project-list">
+        <div class="project-card">
+          <img src="https://tse3.mm.bing.net/th?id=OIP.rx-V-dB8SKIPAunaLh_a4gHaE9&pid=Api&P=0&h=220" alt="Rau sạch">
+          <h3>🛒 Quản lý cửa hàng bán laptop</h3>
+          <p><strong>Công nghệ sử dụng:</strong> HTML5, SQL Server, ASP.NET WebForms</p>
+          <p><strong>Chức năng:</strong> Đăng ký, đăng nhập, mã hóa mật khẩu SHA-256, tìm kiếm, đặt hàng, quản lý sản
+            phẩm, danh mục, thương hiệu, phân quyền người dùng, xuất file excel.</p>
+          <a href="https://github.com/MAICHIVINH/QuanLyCuaHangLapTop.git" target="_blank">🔗 GitHub</a>
+        </div>
+        <div class="project-card">
+          <img src="https://tse4.mm.bing.net/th?id=OIP.4vJq2x3RQsz9uEbkpBlKbwHaE8&pid=Api&P=0&h=220"
+            alt="Quản lý công việc nhóm">
+          <h3>📋 Quản lý công việc nhóm</h3>
+          <p><strong>Công nghệ sử dụng:</strong> Java, Java Swing, MySQL</p>
+          <p><strong>Chức năng:</strong> Phân quyền người dùng (quản trị, thành viên), tạo dự án, giao việc, theo dõi
+            tiến độ, đăng nhập, tìm kiếm công việc theo trạng thái.</p>
+          <a href="https://github.com/tenban/group-task-manager" target="_blank">🔗 GitHub</a>
+        </div>
+      </div>
+    </section> -->
+    <footer>
+      <div class="footer-content">
+        <h2>Liên hệ</h2>
+        <p>Email:<a href="mailto:vinh092004@gmail.com">vinh092004@gmail.com</a></p>
+        <p>Điện thoại:<a href="tel:0394529044">0394529044</a></p>
+        <p class="footer-slogan">"Không ngừng học hỏi, không ngừng phát triển!"</p>
+      </div>
+    </footer>
+
+  </div>
+</body>
+
+</html>
